@@ -1,5 +1,5 @@
-# serverless-function
-Lambda Function 
+# Serverless Function
+Lambda Function Handler and Artisan Command
 
 ## Setup
 
