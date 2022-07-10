@@ -2,15 +2,23 @@
 
 namespace {{ namespace }};
 
+use LaravelExpansions\Function\Types\Event;
+
 class {{ class }}
 {
+    public function __construct()
+    {
+        //
+    }
+
     /**
      * Execute the function.
      *
-     * @return any
+     * @param Event $event
+     * @return mixed
      */
-    public static function exampleMethod($payload)
+    public static function handler(Event $event)
     {
-        //return;
+        // return;
     }
 }
