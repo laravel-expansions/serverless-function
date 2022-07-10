@@ -1,0 +1,47 @@
+#!/usr/bin/env php
+<?php declare(strict_types=1);
+
+use Illuminate\Support\Facades\Artisan;
+
+require __DIR__ . '/vendor/autoload.php';
+
+/**
+ * lambdaハンドラーです。
+ * 
+ * $eventサンプル
+ * ```
+ * $event = [
+ *     'type' => 'function | command | dump',
+ *     'path' => '\App\Functions\ClassName::methodName',
+ *     'payload' => $payload,
+ * ];
+ * ```
+ * 
+ * ローカル実行コマンド
+ * ```
+ * vendor/bin/bref local --handler=handler --file=events/sampleRecord.json
+ * ```
+ * 
+ * @param object $event
+ */
+return function ($event) {
+    $event = (object) $event;
+    $type = $event->type;
+    $path = $event->path;
+    $payload = (object) $event->payload;
+    switch ($type) {
+        case 'function':
+            $class = explode('::', $path)[0];
+            $method = explode('::', $path)[1];
+            $method
+                ? $class::$method($payload)
+                : new $class($payload);
+            break;
+        case 'command':
+            Artisan::call($path);
+            break;
+        case 'dump':
+        default:
+            dump(collect($event)->toJson());
+    }
+};

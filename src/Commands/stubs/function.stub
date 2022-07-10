@@ -1,0 +1,16 @@
+<?php
+
+namespace {{ namespace }};
+
+class {{ class }}
+{
+    /**
+     * Execute the function.
+     *
+     * @return any
+     */
+    public static function exampleMethod($payload)
+    {
+        //return;
+    }
+}

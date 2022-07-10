@@ -1,0 +1,32 @@
+{
+    "name": "laravel-expansions/serverless-function",
+    "license": "MIT",
+    "type": "project",
+    "description": "Function",
+    "homepage": "https://example.com",
+    "keywords": [
+        "laravel",
+        "serverless",
+        "aws",
+        "lambda"
+    ],
+    "autoload": {
+        "psr-4": {
+            "LaravelExpansions\\Function\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Madaka Heri",
+            "email": "madakaheri@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelExpansions\\Function\\ExpansionServiceProvider"
+            ]
+        }
+    }
+}
