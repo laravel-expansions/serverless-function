@@ -17,7 +17,7 @@ class {{ class }}
      * @param Event $event
      * @return mixed
      */
-    public static function handler(Event $event)
+    public function handler(Event $event)
     {
         // return;
     }
