@@ -8,7 +8,6 @@ class Event
 
     public ?string $from;// DEBUG INFO: stream put app name
     public ?string $channel;// using stream event filter
-    public ?array $channels;// using stream event filter
     
     /** Function params */
     
